@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!--解决插值问题闪烁-->
+        <p v-cloak>++++++++++++{{ msg }}---------------</p>
+        <h4 v-text="msg">============</h4>
+    
+        <div v-text=>{{msg2}}</div>
+        <div v-text="msg2"></div>
+        <div v-html="msg2"></div>
+    </div>
+    
+    <!--1.导入Vue的包-->
+    <script src="./lib/vue-2.6.11.js"></script>
+    <script>
+        //2.创建一个Vue的实例
+        //当我们导入包之后，在浏览器的内存中，就多了一个Vue构造函数
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '爱白菜的小昆虫',
+                msg2: '<h1>哇咔咔</h1>'
+            }
+        })
+    </script>
+
+</body>
+</html>
