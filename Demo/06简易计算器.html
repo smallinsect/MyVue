@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--1.导入Vue的包-->
+    <script src="./lib/vue-2.6.11.js"></script>
+    <style>
+        .inner{
+            height: 150px;
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="n1">
+
+        <select v-model="opt">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <input type="text" v-model="n2">
+        <input type="button" @click="calc" value="=">
+        <input type="text" v-model="result">
+    </div>
+    
+    <script>
+        //2.创建一个Vue的实例
+        //当我们导入包之后，在浏览器的内存中，就多了一个Vue构造函数
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                n1: 0,
+                n2: 0,
+                result: 0,
+                opt: '+'
+            },
+            methods:{
+                calc(){
+                    // switch(this.opt){
+                    // case '+':
+                    //     this.result = parseInt(this.n1) + parseInt(this.n2)
+                    //     break
+                    // case '-':
+                    //     this.result = parseInt(this.n1) - parseInt(this.n2)
+                    //     break
+                    // case '*':
+                    //     this.result = parseInt(this.n1) * parseInt(this.n2)
+                    //     break
+                    // case '/':
+                    //     this.result = parseInt(this.n1) / parseInt(this.n2)
+                    //     break
+                    // }
+                    var codeStr = 'parseInt(this.n1) '+this.opt+' parseInt(this.n2)'
+                    this.result = eval(codeStr)
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
