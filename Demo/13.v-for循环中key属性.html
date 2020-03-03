@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--1.导入Vue的包-->
+    <script src="./lib/vue-2.6.11.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="id">
+        <input type="text" v-model="name">
+        <input type="button" value="添加" @click="add">
+        <p v-for="item in list" :key="item.id">
+            <input type="checkbox">{{item.id}}=={{item.name}}
+        </p>
+    </div>
+    
+    <script>
+        //2.创建一个Vue的实例
+        //当我们导入包之后，在浏览器的内存中，就多了一个Vue构造函数
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                name: '',
+                list: [
+                    { id: 1, name: '小昆虫'},
+                    { id: 2, name: '小白菜'},
+                    { id: 3, name: '小青蛙'},
+                ]
+            },
+            methods:{
+                add(){
+                    // this.list.push({id: this.id, name: this.name})
+                    this.list.unshift({id: this.id, name: this.name})
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
