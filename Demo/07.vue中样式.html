@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--1.导入Vue的包-->
+    <script src="./lib/vue-2.6.11.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .width{
+            width: 500px;
+        }
+        .thin{
+            font-weight: 200;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .active{
+            letter-spacing: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 class="red">这是很大的很大的H1，娃娃哈哈哈。。。。</h1>
+        
+        <h1 :class="['red', 'active', flag?'width':'italic']">这是很大的很大的H1，娃娃哈哈哈。。。。</h1>
+
+        <h1 :class="{red: false, width: true, thin: true, italic: true, active: true}">这是很大的很大的H1，娃娃哈哈哈。。。。</h1>
+
+        <h1 :class="classobj">这是很大的很大的H1，娃娃哈哈哈。。。。</h1>
+    </div>
+    
+    <script>
+        //2.创建一个Vue的实例
+        //当我们导入包之后，在浏览器的内存中，就多了一个Vue构造函数
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag:true,
+                classobj: {red: true, width: true, thin: true, italic: true, active: true}
+            },
+            methods:{
+                calc(){
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
