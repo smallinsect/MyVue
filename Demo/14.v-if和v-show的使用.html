@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--1.导入Vue的包-->
+    <script src="./lib/vue-2.6.11.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="toggle" @click="toggle">
+        <!--每次都会重新删除或创建元素-->
+        <p v-if="flag">这就是小昆虫，哇哈哈哈。。。</p>
+        <!--每次只是添加display:none-->
+        <p v-show="flag">这就是小昆虫，哇哈哈哈。。。</p>
+    </div>
+    
+    <script>
+        //2.创建一个Vue的实例
+        //当我们导入包之后，在浏览器的内存中，就多了一个Vue构造函数
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: true
+            },
+            methods:{
+                toggle(){
+                    this.flag = !this.flag
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
