@@ -248,9 +248,32 @@ cd ginessantail-vue
 code .
 ```
 
-启动项目
+## 启动项目
 
 ```
 yarn serve
 ```
 
+# VSCode配置
+
+下载eslint插件
+
+官网
+
+- https://eslint.org/docs/user-guide/getting-started
+
+# bootstrap
+
+官网
+
+- https://bootstrap-vue.org/docs
+
+安装
+
+```
+# With npm
+npm install vue bootstrap-vue bootstrap
+
+# With yarn
+yarn add vue bootstrap-vue bootstrap
+```
