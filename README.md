@@ -160,3 +160,97 @@ yarn global upgrade --latest @vue/cli
 ```
 
 # 开发Vue
+
+## 创建项目顺序
+
+创建vue项目
+
+```
+vue create ginessantail-vue # 项目名字
+```
+
+1. 按上下键，选择
+
+```
+? Please pick a preset:
+  default (babel, eslint)
+> Manually select features 
+```
+
+2. 选择
+
+```
+? Check the features needed for your project:
+ (*) Babel
+ ( ) TypeScript
+ ( ) Progressive Web App (PWA) Support
+ (*) Router
+ (*) Vuex
+>(*) CSS Pre-processors
+ (*) Linter / Formatter
+ ( ) Unit Testing
+ ( ) E2E Testing 
+```
+
+3. 选择
+
+```
+? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default):
+  Sass/SCSS (with dart-sass)
+> Sass/SCSS (with node-sass)
+  Less
+  Stylus 
+```
+
+4. 选择
+
+```
+? Pick a linter / formatter config:
+  ESLint with error prevention only
+> ESLint + Airbnb config
+  ESLint + Standard config
+  ESLint + Prettier 
+```
+
+5. 选择
+
+```
+? Pick additional lint features: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+>(*) Lint on save
+ ( ) Lint and fix on commit 
+```
+
+6. 选择
+
+```
+ ? Where do you prefer placing config for Babel, ESLint, etc.? (Use arrow keys)
+> In dedicated config files
+  In package.json
+```
+
+7. 选择
+
+```
+? Save this as a preset for future projects? (y/N) n
+```
+
+## 终端打开编辑器
+
+进入项目目录
+
+```
+cd ginessantail-vue
+```
+
+编辑器打开
+
+```
+code .
+```
+
+启动项目
+
+```
+yarn serve
+```
+
